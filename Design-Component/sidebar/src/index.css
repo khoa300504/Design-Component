@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar{
+  @apply w-64 h-screen flex flex-col bg-slate-100 p-6 gap-[10px] relative transition-all duration-300
+}
+
+.menu li{
+  @apply relative
+}
+
+.title{
+  @apply text-[10px] font-medium text-[#757575] uppercase mb-[10px]
+}
+
+ul li .menu-item{
+  @apply flex items-center gap-[10px] text-sm text-[rgb(117,117,117)] font-medium py-3 px-2 rounded-lg transition-all duration-300
+  hover:text-black hover:bg-slate-200
+}
+
+li.active > a{
+  @apply text-black bg-slate-200
+}
+
+li.active .arrow{
+  @apply rotate-180 transition-all duration-300
+}
+
+.sub-menu{
+  @apply  ml-5 pl-5 border-l border-solid border-gray-200 overflow-hidden transition-all duration-1000
+}
+
+.sub-menu li a{
+  @apply py-[10px] px-2 text-xs
+}
+
+.hidden-custom{
+  @apply max-h-0 opacity-0
+}
+
+.menu-btn{
+  @apply absolute -right-[14px] top-[3.5%] w-7 h-7 rounded-lg flex items-center justify-center 
+  bg-white cursor-pointer border-2 border-solid border-[#f6f6f6]
+}
+
+.sidebar.active{
+  @apply w-[92px] rounded-r-3xl
+}
+
+.sidebar.active .menu-btn svg{
+  @apply w-24 rounded-r-3xl rotate-180
+}
+
+.sidebar.active .user-details{
+  @apply hidden w-0
+}
+
+.sidebar.active .title{
+  @apply text-center
+}
+
+.sidebar.active .menu > li > a{
+  @apply flex items-center justify-center relative
+}
+
+.sidebar.active .menu > li > a .text{
+  @apply absolute left-[70px] top-1/2 translate-y-[-50%] p-[10px] rounded bg-black text-white opacity-0 invisible transition-all duration-300
+}
+
+.sidebar.active .menu > li > a .text:after{
+  @apply absolute content-[""] left-[-5px] w-5 h-5 rounded-sm bg-black rotate-45 z-[-1]
+}
+
+.sidebar.active .menu > li > a:hover .text{
+  @apply opacity-100 visible left-[50px]
+}
+
+.sidebar.active .menu .sub-menu{
+  @apply absolute top-0 left-5 w-[200px] rounded-[20px] py-[10px] px-5 border border-solid border-[#f6f6f6] bg-white shadow-sub-menu
+}
