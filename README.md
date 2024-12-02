@@ -1,5 +1,5 @@
 # Author: **_NTKhoa.Dev_**
-# React & TailwindCSS Components Repository  
+## React & TailwindCSS Components Repository  
 
 
 Welcome to the **React & TailwindCSS Components Repository**! This repository is a collection of reusable UI components, such as sidebars, navbars, buttons, and forms, designed to speed up development and maintain consistency across projects.  
